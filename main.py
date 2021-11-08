@@ -28,6 +28,6 @@ if k_adi=="gizemsenol" and sifre=="publicis.1234@2021":
         m.fit(df1)
         future = m.make_future_dataframe(periods=donem, freq='M')
         forecast = m.predict(future)
-        ff.append(forecast[select_].tail(1).values[0])
+        ff.append(forecast[select_].tail(donem).values[0])
         df.drop(columns=["y"], inplace=True)
     st.write(pd.DataFrame(ff).T)
