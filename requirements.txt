@@ -1,5 +1,5 @@
 pandas
-streamlit
+streamlit==0.82.0
 openpyxl
-pystan
-fbprophet
+Pystan==2.19.1.1
+fbprophet==0.7.1
