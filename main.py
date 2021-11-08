@@ -32,5 +32,5 @@ if k_adi=="gizemsenol" and sifre=="publicis.1234@2021":
         df.drop(columns=["y"], inplace=True)
     x=pd.DataFrame(ff).T
     x.columns=col_list
-    
+    x[x<0]=0
     st.write(x)
