@@ -31,7 +31,6 @@ if k_adi=="gizemsenol" and sifre=="publicis.1234@2021":
         ff.append(forecast[select_].tail(donem))
         df.drop(columns=["y"], inplace=True)
     x=pd.DataFrame(ff).T
-    x[x < 0] = 0
     x.columns=col_list
     
     st.write(x)
