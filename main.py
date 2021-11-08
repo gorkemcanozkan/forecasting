@@ -9,6 +9,7 @@ df=pd.read_excel(st.file_uploader("Dosyanızı Import Ediniz"))
 k_adi=st.sidebar.text_input("Kullanıcı Adı")
 sifre=st.sidebar.text_input("Şifre")
 donem=st.sidebar.text_input("Kaç Dönem Tahmin Etmek İstiyorsunuz?")
+donem=int(donem)
 select=st.sidebar.radio("İyimser - Orta - Kötümser Tahmin", ("İyimser","Ortalama","Kötümser"))
 if select=="İyimser":
     select_="yhat_upper"
@@ -29,4 +30,4 @@ if k_adi=="gizemsenol" and sifre=="publicis.1234@2021":
         forecast = m.predict(future)
         ff.append(forecast[select_].tail(1).values[0])
         df.drop(columns=["y"], inplace=True)
-    pd.DataFrame(ff3).T
+    st.write(pd.DataFrame(ff3).T)
