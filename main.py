@@ -30,4 +30,6 @@ if k_adi=="gizemsenol" and sifre=="publicis.1234@2021":
         forecast = m.predict(future)
         ff.append(forecast[select_].tail(donem).values[0])
         df.drop(columns=["y"], inplace=True)
-    st.write(pd.DataFrame(ff).T)
+    x=pd.DataFrame(ff).T
+    x.columns=col_list
+    st.write(x)
