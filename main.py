@@ -15,7 +15,7 @@ elif select=="Ortalama":
     select_="yhat"
 elif select=="Kötümser":
     select_="yhat_lower"
-if st.button("Tahminle"):
+if st.sidebar.button("Tahminle"):
     col_list = df.columns[1:]
     ff = []
     for item in col_list:
