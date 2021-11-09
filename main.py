@@ -17,7 +17,7 @@ elif select=="Kötümser":
     select_="yhat_lower"
 if st.sidebar.button("Tahminle"):
     col_list = df.columns[1:]
-    ff = [
+    ff = []
     
     def mean_absolute_percentage_error(y_true, y_pred):
         y_true+=0.001
