@@ -31,7 +31,7 @@ if st.sidebar.button("Tahminle"):
         forecast = m.predict(future)
         ff.append(forecast[select_].tail(donem))
         df.drop(columns=["y"], inplace=True)
-        print(f'MAPE for {item}: ',mean_absolute_percentage_error(df.y,forecast.yhat))
+        st.write(f'MAPE for {item}: ',mean_absolute_percentage_error(df1.y,forecast.yhat))
     x=pd.DataFrame(ff).T
     x.columns=col_list
     x[x<0]=0
