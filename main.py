@@ -37,4 +37,3 @@ if st.sidebar.button("Tahminle"):
     x.columns=col_list
     x[x<0]=0
     st.write(x)
-    st.download_button("Download", x, file_name="forecast.xlsx", mime=None)
