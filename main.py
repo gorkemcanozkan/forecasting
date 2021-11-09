@@ -19,7 +19,8 @@ if st.sidebar.button("Tahminle"):
     col_list = df.columns[1:]
     ff = []
     
-    def mean_absolute_percentage_error(y_true, y_pred): 
+    def mean_absolute_percentage_error(y_true, y_pred):
+        y_true+=0.001
         return np.mean(np.abs((y_pred - y_true) /np.abs(y_true))) * 100
     
     for item in col_list:
