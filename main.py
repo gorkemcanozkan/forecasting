@@ -18,6 +18,10 @@ elif select=="Kötümser":
 if st.sidebar.button("Tahminle"):
     col_list = df.columns[1:]
     ff = []
+    
+    def mean_absolute_percentage_error(y_true, y_pred): 
+        return np.mean(np.abs((y_pred - y_true) /np.abs(y_true))) * 100
+    
     for item in col_list:
         df = df.rename(columns={item: "y"})
         df1 = df[['ds', 'y']]
@@ -27,6 +31,7 @@ if st.sidebar.button("Tahminle"):
         forecast = m.predict(future)
         ff.append(forecast[select_].tail(donem))
         df.drop(columns=["y"], inplace=True)
+        print(f'MAPE for {item}: ',mean_absolute_percentage_error(df.y,forecast.yhat))
     x=pd.DataFrame(ff).T
     x.columns=col_list
     x[x<0]=0
